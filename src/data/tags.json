@@ -1,0 +1,8 @@
+[
+  { "id": "tag-01", "name": "Meal-Prep" },
+  { "id": "tag-02", "name": "Kid-Friendly" },
+  { "id": "tag-03", "name": "High-Protein" },
+  { "id": "tag-04", "name": "Low-Carb" },
+  { "id": "tag-05", "name": "Vegan" },
+  { "id": "tag-06", "name": "Viral-Trend" }
+]

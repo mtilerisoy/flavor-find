@@ -1,0 +1,108 @@
+[
+  {
+    "id": "recipe-001",
+    "title": "Viral Feta & Tomato Pasta",
+    "description": "The incredibly popular and easy baked feta pasta that took over social media. A perfect weeknight dinner.",
+    "source_url": "https://www.tiktok.com/@feelgoodfoodie/video/6922725899933027589",
+    "image_url": "/images/feta-pasta.jpg",
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 30,
+    "total_time_minutes": 40,
+    "servings_yield": 4,
+    "instructions": [
+      "Preheat oven to 400°F (200°C).",
+      "Place cherry tomatoes in a baking dish. Drizzle with olive oil, salt, and pepper. Toss to coat.",
+      "Place the block of feta cheese in the center of the tomatoes.",
+      "Bake for 30 minutes, until tomatoes are bursting and feta is soft.",
+      "Meanwhile, cook pasta according to package directions.",
+      "Remove dish from oven. Smash the feta and tomatoes with a spoon to create a creamy sauce. Stir in minced garlic and fresh basil.",
+      "Drain the pasta, reserving a little pasta water. Add the cooked pasta to the sauce and stir to combine. Add pasta water if needed to thin the sauce.",
+      "Serve immediately."
+    ],
+    "tags": ["Viral-Trend", "Kid-Friendly"],
+    "calculated_macros": {
+      "protein_grams": 18,
+      "carbs_grams": 65,
+      "fat_grams": 25,
+      "calories": 557
+    },
+    "ingredients": [
+      { "name": "Cherry Tomatoes", "quantity": 500, "unit": "g" },
+      { "name": "Feta Cheese", "quantity": 200, "unit": "g" },
+      { "name": "Pasta (your choice)", "quantity": 400, "unit": "g" },
+      { "name": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+      { "name": "Garlic", "quantity": 2, "unit": "cloves" },
+      { "name": "Fresh Basil", "quantity": 0.25, "unit": "cup" }
+    ]
+  },
+
+  {
+    "id": "recipe-002",
+    "title": "Vegan Chickpea Salad",
+    "description": "A refreshing and protein-packed vegan salad perfect for meal prep or a light lunch.",
+    "source_url": "https://www.tiktok.com/@veganrecipes/video/6922725899933027589",
+    "image_url": "/images/chickpea-salad.jpg",
+    "prep_time_minutes": 15,
+    "cook_time_minutes": 0,
+    "total_time_minutes": 15,
+    "servings_yield": 4,
+    "instructions": [
+      "In a large bowl, combine drained chickpeas, diced cucumber, cherry tomatoes, red onion, and parsley.",
+      "In a small bowl, whisk together olive oil, lemon juice, salt, and pepper.",
+      "Pour the dressing over the salad and toss to combine.",
+      "Serve immediately or refrigerate for up to 2 days."
+    ],
+    "tags": ["Vegan", "Meal-Prep"],
+    "calculated_macros": {
+      "protein_grams": 12,
+      "carbs_grams": 30,
+      "fat_grams": 10,
+      "calories": 250
+    },
+    "ingredients": [
+      { "name": "Canned Chickpeas", "quantity": 400, "unit": "g" },
+      { "name": "Cucumber", "quantity": 1, "unit": "" },
+      { "name": "Cherry Tomatoes", "quantity": 250, "unit": "g" },
+      { "name": "Red Onion", "quantity": 0.5, "unit": "" },
+      { "name": "Fresh Parsley", "quantity": 0.25, "unit": "cup" },
+      { "name": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+      { "name": "Lemon Juice", "quantity": 2, "unit": "tbsp" }
+    ]
+  },
+  
+  {
+    "id": "recipe-003",
+    "title": "High-Protein Quinoa Bowl",
+    "description": "A nutritious and filling quinoa bowl loaded with veggies and protein.",
+    "source_url": "https://www.tiktok.com/@healthyrecipes/video/6922725899933027589",
+    "image_url": "/images/quinoa-bowl.jpg",
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 20,
+    "total_time_minutes": 30,
+    "servings_yield": 2,
+    "instructions": [
+      "Rinse quinoa under cold water. Cook according to package instructions.",
+      "In a skillet, heat olive oil over medium heat. Add diced bell pepper, zucchini, and corn. Sauté until tender.",
+      "In a bowl, combine cooked quinoa, sautéed vegetables, black beans, and avocado.",
+      "Drizzle with lime juice and season with salt and pepper. Toss to combine.",
+      "Serve warm or chilled."
+    ],
+    "tags": ["High-Protein", "Meal-Prep"],
+    "calculated_macros": {
+      "protein_grams": 20,
+      "carbs_grams": 45,
+      "fat_grams": 15,
+      "calories": 400
+    },
+    "ingredients": [
+      { "name": "Quinoa", "quantity": 150, "unit": "g" },
+      { "name": "Bell Pepper", "quantity": 1, "unit": "" },
+      { "name": "Zucchini", "quantity": 1, "unit": "" },
+      { "name": "Corn (canned or frozen)", "quantity": 150, "unit": "g" },
+      { "name": "Black Beans (canned)", "quantity": 200, "unit": "g" },
+      { "name": "Avocado", "quantity": 1, "unit": "" },
+      { "name": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+      { "name": "Lime Juice", "quantity": 1, "unit": "" }
+    ]
+  }
+]
