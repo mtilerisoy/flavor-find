@@ -5,16 +5,18 @@ import { RecipeStructuredData } from '@/recipes/ui/RecipeStructuredData';
 
 interface RecipeLayoutProps {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default async function RecipeLayout({
   children,
   params,
 }: RecipeLayoutProps) {
-  const recipe = await getRecipeById(params.id);
+  const resolvedParams = await params;
+
+  const recipe = await getRecipeById(resolvedParams.id);
 
   if (!recipe) {
     notFound();

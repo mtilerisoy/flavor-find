@@ -4,14 +4,14 @@ import { RecipeCard } from '@/recipes/ui/RecipeCard';
 import { FilterPanel } from '@/recipes/ui/FilterPanel';
 
 interface HomePageProps {
-  searchParams: {
+  searchParams: Promise<{
     maxTime?: string;
     maxIngredients?: string;
     tags?: string;
     search?: string;
     minProtein?: string;
     maxCarbs?: string;
-  };
+  }>;
 }
 
 /**

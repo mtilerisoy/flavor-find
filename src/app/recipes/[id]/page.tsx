@@ -6,9 +6,9 @@ import Link from 'next/link';
 import { getRecipeById } from '@/recipes/lib/api';
 
 interface RecipePageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 /**
@@ -16,7 +16,8 @@ interface RecipePageProps {
  * Fetches data using the ID from the URL.
  */
 export default async function RecipePage({ params }: RecipePageProps) {
-  const { id } = params;
+  const resolvedParams = await params;
+  const { id } = resolvedParams;
   const recipe = await getRecipeById(id);
 
   // If no recipe is found for the given ID, render the 404 page.
@@ -90,7 +91,8 @@ export default async function RecipePage({ params }: RecipePageProps) {
 }
 
 export async function generateMetadata({ params }: RecipePageProps): Promise<Metadata> {
-  const recipe = await getRecipeById(params.id);
+  const resolvedParams = await params;
+  const recipe = await getRecipeById(resolvedParams.id);
 
   if (!recipe) {
     return {
