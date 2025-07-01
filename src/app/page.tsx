@@ -1,3 +1,4 @@
+import React from "react";
 import { getPublicRecipes, getAvailableTags } from '@/recipes/lib/api';
 import { RecipeCard } from '@/recipes/ui/RecipeCard';
 import { FilterPanel } from '@/recipes/ui/FilterPanel';

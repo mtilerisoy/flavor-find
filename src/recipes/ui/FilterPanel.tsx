@@ -1,5 +1,6 @@
 'use client';
 
+import React from "react";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { Tag } from '@/recipes/lib/api';
 

@@ -1,3 +1,4 @@
+import React from "react";
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Recipe } from '@/recipes/lib/api';
