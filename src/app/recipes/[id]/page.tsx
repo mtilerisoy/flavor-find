@@ -1,3 +1,5 @@
+import React from "react";
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -85,4 +87,31 @@ export default async function RecipePage({ params }: RecipePageProps) {
       </div>
     </article>
   );
+}
+
+export async function generateMetadata({ params }: RecipePageProps): Promise<Metadata> {
+  const recipe = await getRecipeById(params.id);
+
+  if (!recipe) {
+    return {
+      title: 'Recipe Not Found',
+      description: 'The recipe you are looking for does not exist.',
+    };
+  }
+
+  return {
+    title: `${recipe.title} | Flavor-Find`,
+    description: recipe.description,
+    openGraph: {
+      title: recipe.title,
+      description: recipe.description,
+      images: [
+        {
+          url: recipe.image_url || '/default-og-image.png', // Fallback image
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+  };
 }
