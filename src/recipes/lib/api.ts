@@ -2,6 +2,11 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import { cache } from 'react';
 
+export interface Tag {
+  id: string;
+  name: string;
+}
+
 // Define the types for our data structures to ensure type safety
 // These should match the structure of your JSON files.
 
@@ -116,4 +121,15 @@ export async function getPublicRecipes(filters: {
 export async function getRecipeById(id: string): Promise<Recipe | undefined> {
   const recipes = await getRecipes();
   return recipes.find((recipe) => recipe.id === id);
+}
+
+export async function getAvailableTags(): Promise<Tag[]> {
+  const filePath = path.join(process.cwd(), 'src/data/tags.json');
+  try {
+    const fileContents = await fs.readFile(filePath, 'utf8');
+    return JSON.parse(fileContents) as Tag[];
+  } catch (error) {
+    console.error('Failed to read or parse tags.json:', error);
+    return [];
+  }
 }

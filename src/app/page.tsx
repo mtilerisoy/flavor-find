@@ -1,13 +1,43 @@
-import { getPublicRecipes } from '@/recipes/lib/api';
+import { getPublicRecipes, getAvailableTags } from '@/recipes/lib/api';
 import { RecipeCard } from '@/recipes/ui/RecipeCard';
+import { FilterPanel } from '@/recipes/ui/FilterPanel';
+
+interface HomePageProps {
+  searchParams: {
+    maxTime?: string;
+    maxIngredients?: string;
+    tags?: string;
+    search?: string;
+    minProtein?: string;
+    maxCarbs?: string;
+  };
+}
 
 /**
- * The main home page, displaying a gallery of all available recipes.
- * This is a React Server Component, so it can fetch data directly.
+ * The main home page, now with filtering capabilities.
+ * It reads filters from searchParams and passes them to the API.
  */
-export default async function HomePage() {
-  // We call our API to get the recipe data from the local JSON file.
-  const recipes = await getPublicRecipes({});
+export default async function HomePage({ searchParams }: HomePageProps) {
+  // Await searchParams before using its properties
+  const resolvedSearchParams = await searchParams;
+
+  const search = resolvedSearchParams.search || undefined;
+  const tags = resolvedSearchParams.tags?.split(',') || undefined;
+  const maxTime = resolvedSearchParams.maxTime ? Number(resolvedSearchParams.maxTime) : undefined;
+  const maxIngredients = resolvedSearchParams.maxIngredients
+    ? Number(resolvedSearchParams.maxIngredients)
+    : undefined;
+
+  // Fetch data in parallel for better performance
+  const [recipes, availableTags] = await Promise.all([
+    getPublicRecipes({
+      maxTime,
+      maxIngredients,
+      tags,
+      search,
+    }),
+    getAvailableTags(),
+  ]);
 
   return (
     <main className="container mx-auto p-4 sm:p-6 lg:p-8">
@@ -20,6 +50,8 @@ export default async function HomePage() {
         </p>
       </div>
 
+      <FilterPanel tags={availableTags} />
+
       {recipes.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {recipes.map((recipe) => (
@@ -28,7 +60,7 @@ export default async function HomePage() {
         </div>
       ) : (
         <div className="text-center text-gray-500">
-          <p>No recipes found. Try adding some to `src/data/recipes.json`!</p>
+          <p>No recipes match your current filters.</p>
         </div>
       )}
     </main>
